@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Kalkulator Medis</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="kalkulator-card">
+        <h3>Kalkulator MAP</h3>
+        <input type="number" id="sis" placeholder="Sistolik (mmHg)">
+        <input type="number" id="dia" placeholder="Diastolik (mmHg)">
+        <button class="btn-primary" onclick="hitung()">Hitung MAP</button>
+        <div id="hasil" style="margin-top:20px; font-weight:bold;"></div>
+    </div>
+
+    <script>
+        function hitung() {
+            let s = parseFloat(document.getElementById('sis').value);
+            let d = parseFloat(document.getElementById('dia').value);
+            let map = (s + (2 * d)) / 3;
+            document.getElementById('hasil').innerText = "Hasil MAP: " + map.toFixed(1) + " mmHg";
+        }
+    </script>
+</body>
+</html>
